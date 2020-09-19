@@ -1,6 +1,6 @@
 import Link from "next/link";
-const GA_TRACKING_ID = process.env.ga_tracking_id;
-console.log(GA_TRACKING_ID);
+const TESTID = process.env.test - id;
+console.log(TESTID);
 
 const Header = () => {
   return (
