@@ -1,6 +1,4 @@
 import Link from "next/link";
-const TESTID = process.env.testid;
-console.log(TESTID);
 
 const Header = () => {
   return (
