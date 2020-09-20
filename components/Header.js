@@ -8,10 +8,10 @@ const Header = () => {
           <a href="/" id="logo"></a>
         </h1>
         <nav id="main-nav">
-          {/* <Link href={{ pathname: "/", query: { name: "wordpress" } }}>
+          <Link href={{ pathname: "/posts/wp_note1" }}>
             <a className="main-nav-link">Wordpress</a>
-          </Link> */}
-          <Link href="/">
+          </Link>
+          <Link href={{ pathname: "/posts/php_note1" }}>
             <a className="main-nav-link">PHP</a>
           </Link>
         </nav>
