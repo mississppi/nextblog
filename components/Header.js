@@ -14,6 +14,12 @@ const Header = () => {
           <Link href={{ pathname: "/posts/php_note1" }}>
             <a className="main-nav-link">PHP</a>
           </Link>
+          <Link href={{ pathname: "/posts/aws_2" }}>
+            <a className="main-nav-link">AWS</a>
+          </Link>
+          <Link href={{ pathname: "/posts/linux_1" }}>
+            <a className="main-nav-link">LINUX</a>
+          </Link>
         </nav>
       </div>
       <style jsx>{`
