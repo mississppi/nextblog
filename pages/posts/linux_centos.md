@@ -40,7 +40,7 @@ $ mv id_rsa.pub .ssh/authorized_keys    # 公開鍵リスト作成
 $ chmod 600 .ssh/authorized_keys        # 自分以外の読み書きを禁止
 ```
 
-この状態ですでにファイル指定で秘密鍵でログインできるようになる
+この時点ですでにファイル指定で秘密鍵でログインできるようになる
 
 ```
 ssh -i id_rsa_hogehoge user@xxx.xx.xx.xxx

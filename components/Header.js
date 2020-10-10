@@ -17,7 +17,7 @@ const Header = () => {
           <Link href={{ pathname: "/posts/aws_2" }}>
             <a className="main-nav-link">AWS</a>
           </Link>
-          <Link href={{ pathname: "/posts/linux_1" }}>
+          <Link href={{ pathname: "/posts/linux_centos" }}>
             <a className="main-nav-link">LINUX</a>
           </Link>
         </nav>
