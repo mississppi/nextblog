@@ -32,3 +32,15 @@ echo "date.timezone = Asia/Tokyo" >> /etc/php.ini
 systemctl restart httpd
 
 ```
+
+## Apache のアンインストール
+
+ちなみにアンインストール方法は以下です
+
+```
+sudo yum remove -y httpd apr apr-util httpd-tools
+
+//かくにん　
+yum list installed | grep httpd
+
+```
