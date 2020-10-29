@@ -1,6 +1,6 @@
 ---
-title: "さくらVPSでCentOS7でLAMP環境構築をシェルスクリプトで作ってみた"
-published: 2020-10-22
+title: "wp-cliでLAMP環境、wordpress構築するシェルスクリプトを作ってみた"
+published: 2020-10-29
 category: linux
 ---
 
