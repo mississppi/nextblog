@@ -39,6 +39,7 @@ yum -y install expect
 
 # apacheのインストール
 yum -y install httpd
+systemctl enable httpd.service
 
 # リポジトリの追加
 yum -y install epel-release
@@ -113,6 +114,7 @@ EOF
   MYSQLPASS="$(mkpasswd -l 16 | tee -a ~/.mysql.secrets)"
 
   mysql -u root -p"${MysqlRootPasswd}" <<EOT
+create database wordpress default character set utf8;
 create user "${MYSQLUSER}"@localhost identified by "${MYSQLPASS}";
 grant all on wordpress.* to "${MYSQLUSER}"@localhost;
 flush privileges;
@@ -137,6 +139,9 @@ fi
 
 # mysqldの再起動
 systemctl restart mysqld
+
+# /var/www/htmlをchmod
+chown -R apache:apache /var/www/html
 
 # wp-cliのダウンロード
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar

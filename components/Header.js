@@ -20,6 +20,9 @@ const Header = () => {
           <Link href={{ pathname: "/posts/linux_centos" }}>
             <a className="main-nav-link">LINUX</a>
           </Link>
+          <Link href={{ pathname: "/posts/ts_electron" }}>
+            <a className="main-nav-link">TYPESCRIPT</a>
+          </Link>
         </nav>
       </div>
       <style jsx>{`
