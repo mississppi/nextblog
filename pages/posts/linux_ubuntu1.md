@@ -34,7 +34,7 @@ sudo service nginx upgrade
 
 ## ログについて
 
-### ローテートの設定ファイル。日ごとでローテートしたい場合は、
+### ローテートの設定ファイル。日ごとでローテートしたい場合は、dateextいれておく
 
 ```
 /etc/logrotate.d/nginx
