@@ -42,6 +42,7 @@ sudo service nginx upgrade
 daily,weekly,monthlyで切り替えられる
 
 /var/log/nginx/*.log {
+    dateext
 	daily
 	missingok
 	rotate 14
