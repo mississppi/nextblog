@@ -32,7 +32,10 @@ sudo service nginx reload
 sudo service nginx upgrade
 ```
 
-## ログについて
+### errorログ以降だけを出力させたい
+```
+error_log /var/log/nginx/error.log error;
+```
 
 ### ローテートの設定ファイル。日ごとでローテートしたい場合は、dateextいれておく
 
@@ -69,7 +72,38 @@ sudo awk '{print $1}'/var/log/nginx/access.log | sort | uniq -c | sort -nr
 ```
 ```
 
-### 特定のページでエラー
+### basic認証かけたい
 
+```
+いれとく
+sudo apt-get install -y apache2-utils
 
-### 特定のページでリダイレクトさせる
+.htpasswd作成する
+sudo htpasswd -c /etc/nginx/.htpasswd msp(user名)
+New password: パスワードを入力
+Re-type new password: パスワードを入力
+
+設定ファイルに追記
+server {
+    auth_basic "Basic Authentication";
+    auth_basic_user_file /etc/nginx/.htpasswd;
+}
+
+特定のディレクトリに対して設定したい
+server {
+    localtion /campaign {
+        auth_basic "Basic Authentication";
+        auth_basic_user_file /etc/nginx/.htpasswd;
+    }
+}
+
+```
+
+### リダイレクト
+
+恒久的にリダイレクト
+```
+location /closed/ {
+    return 301 https://hogehoge.com;
+}
+```
