@@ -23,6 +23,9 @@ const Header = () => {
           <Link href={{ pathname: "/posts/ts_electron" }}>
             <a className="main-nav-link">TYPESCRIPT</a>
           </Link>
+          <Link href={{ pathname: "/posts/mysql" }}>
+            <a className="main-nav-link">MySql</a>
+          </Link>
         </nav>
       </div>
       <style jsx>{`
