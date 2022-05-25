@@ -49,6 +49,14 @@ CREATE TABLE IF NOT EXISTS posts
 (
   `id`         int(11) NOT NULL AUTO_INCREMENT,
   `title`     text,
+  `content`     text,
   PRIMARY KEY (`id`)
 )
+```
+
+## データベース消して入れ直したい時
+
+```
+ここを消す
+- ./mysql/data:/var/lib/mysql
 ```
