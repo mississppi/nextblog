@@ -33,13 +33,15 @@ CMD ["mysqld"]
 
 ## 初期値も入れたかった
 
-docker-entrypoint-initdb.dへsqlファイルを用意すると自動実行される
+docker-entrypoint-initdb.dへsqlファイルを用意すると自動実行される  
+今回はローカル側に mysql/seed/init.sql という具合にした
 
 ```
 volumes:
       - ./mysql/seed:/docker-entrypoint-initdb.d
 ```
 
+init.sqlの内容
 ```
 DROP DATABASE IF EXISTS test_db;
 CREATE DATABASE test_db;
