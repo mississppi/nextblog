@@ -14,7 +14,7 @@ wordpress・・・プラグイン開発用
 
 ## 今回やること
 Dockerfileでwp-cliとcomposerのインストール  
-install.shでwordpressのインストール完了まで(docker起動時には実行しない)
+install.shでwordpressのインストール、phpunitに必要なツールインストール完了まで(docker起動時には実行しない)
 
 docker-compose.yml
 ```
@@ -64,7 +64,13 @@ RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
   && php -r "if (hash_file('sha384', 'composer-setup.php') === '55ce33d7678c5a611085589f1f3ddf8b3c52d662cd01d4ba75c0ee0459970c2200a51f492d557530c71c15d8dba01eae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;" \
   && php composer-setup.php \
   && php -r "unlink('composer-setup.php');" \
-  && mv composer.phar /usr/local/bin/composer
+  && mv composer.phar /usr/local/bin/composer \
+  && apt-get update && apt-get install -y vim \
+  && apt install -y sudo git default-mysql-client subversion \
+  && curl -O https://phar.phpunit.de/phpunit-7.5.9.phar \
+  && chmod +x phpunit-7.5.9.phar \
+  && mv phpunit-7.5.9.phar /usr/local/bin/phpunit \
+  && phpunit --version
 ```
 
 install.sh
@@ -96,4 +102,13 @@ wp theme delete --allow-root twentytwenty
 # プラグイン削除
 wp plugin delete --allow-root hello.php
 wp plugin delete --allow-root akismet
+
+# composer.json生成
+echo "{
+    \"require\": {
+        \"yoast/phpunit-polyfills\": \"^1.0\"
+    }
+}" > composer.json
+
+composer install
 ```
