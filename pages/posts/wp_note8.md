@@ -7,10 +7,14 @@ category: wordpress
 よく使うテンプレート
 
 ## 今回の構成
-docker-compose.yml
-Dockerfile
-install.sh
-wordpress
+docker-compose.yml  
+Dockerfile・・・wp-cliをインストールする  
+install.sh・・・wpのインストール用  
+wordpress・・・プラグイン開発用  
+
+## 今回やること
+Dockerfileでwp-cliとcomposerのインストール  
+install.shでwordpressのインストール完了まで(docker起動時には実行しない)
 
 docker-compose.yml
 ```
