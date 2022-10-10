@@ -26,6 +26,9 @@ const Header = () => {
           <Link href={{ pathname: "/posts/mysql" }}>
             <a className="main-nav-link">mysql</a>
           </Link>
+          <Link href={{ pathname: "/posts/rust" }}>
+            <a className="main-nav-link">rust</a>
+          </Link>
           <Link href={{ pathname: "/posts/amazonconnect" }}>
             <a className="main-nav-link">amazonconnect</a>
           </Link>
