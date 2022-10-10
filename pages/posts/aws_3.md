@@ -47,7 +47,7 @@ docker push hogehoge.dkr.ecr.ap-northeast-1.amazonaws.com/amazon-ecs-sample:late
 
 ### denied: Your authorization token has expired. Reauthenticate and try again.
 
-docker のトークン取得をしただけで、ログインできてない
+これが出た場合は、トークンが古い。これを削除して再実行でいけました
 
 ### 完了後
 
