@@ -1,6 +1,6 @@
 ---
 title: "rustの検証環境作ってみた"
-published: 2020-10-10
+published: 2022-10-10
 category: rust
 ---
 
