@@ -1,6 +1,6 @@
 ---
 title: "rust触ってみた"
-published: 2020-10-10
+published: 2022-10-10
 category: rust
 ---
 
