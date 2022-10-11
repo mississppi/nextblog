@@ -1,5 +1,5 @@
 ---
-title: "rust触ってみた"
+title: "rustでcliを作ってみた"
 published: 2022-10-11
 category: rust
 ---
@@ -8,20 +8,27 @@ category: rust
 ただ初めて触るので最低限のことも書いてみた
 
 ```
-//普通にhello world
+//実行方法
+rustc hello.rs 
+./hello
+```
+
+とりあえずhelloworld
+```
 fn main(){
   println!("{}", "hello world");
 }
 ```
 
+変数つかう
 ```
 //変数で表示
 let hello = String::from("hello world");
 println!("{}", hello);
 ```
-
+  
+関数化して呼んでみる
 ```
-//関数化して呼んでみる
 fn main(){
   getId();
 }
@@ -31,9 +38,9 @@ fn getId(){
 }
 
 ```
-
+  
+引数込みだとこんな感じ
 ```
-//引数込みだとこんな感じ
 fn main(){
   getId(10);
 }
@@ -43,6 +50,7 @@ fn getId(id: i32){
 }
 ```
 
+戻り値を変数に格納する
 ```
 //引数込みだとこんな感じ
 fn main(){
