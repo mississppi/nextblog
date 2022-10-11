@@ -50,51 +50,38 @@ fn getId(id: i32){
 }
 ```
 
-戻り値を変数に格納する
+戻り値を変数に格納する  
+参照だけなら&strでOKみたい  
 ```
-//引数込みだとこんな感じ
 fn main(){
-  getId(10);
-}
-
-fn getId(id: i32){
+    let slug = String::from("sample");
+    let id = search_id(&slug);
     println!("{}", id);
 }
+
+fn search_id(slug: &str) -> i32{
+    return 10;
+}
 ```
 
-まず文字列受け取って表示
+よくある構造をやってみたい
+[article] => [["id" => 1, "content" => "hello"], ["id" => 2, "content" => "hoge"]]
 ```
+//これをつければprintlnできる
+#[derive(Debug)]
+struct Article {
+    id: u64,
+    title: String,
+    content: String,
+}
+
 fn main(){
-    let input = input();
-    println!("{}", input);
+    let mut article = Article {
+        id :1 ,
+        title : String::from("タイトル"),
+        content : String::from("本文"),
+    };
+    //{:?}で出力できる
+    println!("{:?}", article);
 }
-
-fn input() -> String{
-    let mut word = String::new();
-    std::io::stdin().read_line(&mut word).ok();
-    return word.trim().to_string();
-}
-```
-
-```
-```
-
-```
-```
-
-
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
 ```
