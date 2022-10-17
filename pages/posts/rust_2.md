@@ -64,7 +64,7 @@ fn search_id(slug: &str) -> i32{
 }
 ```
 
-よくある構造をやってみたい
+よくある構造をやってみた
 [article] => [["id" => 1, "content" => "hello"], ["id" => 2, "content" => "hoge"]]
 ```
 //これをつければprintlnできる
@@ -83,5 +83,17 @@ fn main(){
     };
     //{:?}で出力できる
     println!("{:?}", article);
+}
+```
+
+本題のインプットを受け取る
+```
+fn main(){
+  let mut word = input();
+}
+fn input() -> String{
+  let mut word = String::new();
+  std::io::stdin().read_line(&mut word).ok();
+  return word.trim().to_string();
 }
 ```
