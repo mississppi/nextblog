@@ -5,9 +5,9 @@ category: rust
 ---
 
 tauriで新規作成したプロジェクトで、フロントとバックでやりとりをしてみた。  
-選択したのは、react(ts)で作成  
+選択したのは、react(ts)
 
-## tauriの起動
+# tauriの起動
 ```
 npm run tauri dev
 ```
@@ -44,10 +44,10 @@ const List = () => {
 export default List
 ```
 
-フロント側はとりあえずテスト用としてコンポーネントを作成して起動  
+フロント側はとりあえずテスト用としてボタン作成  
 ![テスト用](/tauri01.png)
 
-次に押下時にrustに送信するクリックメソッドを作成  
+次にrustに送信するクリックメソッドを作成  
 invoke('rust側で設定したメソッド')とすればコール可能となる  
 *invokeをimportする必要がある  
 ```
@@ -67,7 +67,7 @@ const List = () => {
 
 これでボタンをクリックすることで、rust側のコンソールにメッセージが表示されるようになった  
 
-## フロントからidとタイトルと本文をrust側へ渡す
+### フロントからidとタイトルと本文をrust側へ渡す
 ```
 const List = () => {
     function click() {
@@ -91,7 +91,7 @@ fn call(id: u64, title: String, content: String) {
 }
 ```
 
-## rust側からフロントへデータを送信する
+### rust側からフロントへデータを送信する
 
 ```
 #[tauri::command]

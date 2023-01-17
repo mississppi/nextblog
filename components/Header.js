@@ -21,7 +21,7 @@ const Header = () => {
             <a className="main-nav-link">LINUX</a>
           </Link>
           <Link href={{ pathname: "/posts/ts_electron" }}>
-            <a className="main-nav-link">TYPESCRIPT</a>
+            <a className="main-nav-link">typescript</a>
           </Link>
           <Link href={{ pathname: "/posts/mysql" }}>
             <a className="main-nav-link">mysql</a>
