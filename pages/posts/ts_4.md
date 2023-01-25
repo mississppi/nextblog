@@ -10,15 +10,16 @@ category: typescript
 入力、出力が同じ出力が保証されている参照透過な関数を組み合わせるスタイルのこと
 
 ## Arrayのプロトタイプメソッドを整理
-map() ・・・要素をひとつずつ加工して配列を返す
+
 ```
+map() ・・・要素をひとつずつ加工して配列を返す
 posts.map((val) => {console.log(val)});
+
+find() ・・・条件にあった最初の要素を返す。ない場合はundefind
+const found = posts.find((val) => {return val.id == target_id});
 ```
 
 filter() ・・・・・・条件あったもののみを配列を返す
-find() ・・・条件にあった最初の要素を返す。ない場合はundefind
-const res = posts.find((val) => val.id == 2);
-
 findIndex() ・・・条件に合った最初のインデックスを返す。-1を返すない場合
 every()　・・・すべて条件にあうか真偽値で返す
 some() ・・・ひとつでも満たすか真偽値で返す
