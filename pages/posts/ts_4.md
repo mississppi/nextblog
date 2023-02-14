@@ -1,68 +1,72 @@
 ---
-title: "関数型プログラミングとか配列のとかを整理"
-published: 2023-01-19
-category: typescript
+title: "typescriptの用語を整理"
+published: 2023-02-04
+category: ts/js
 ---
 
-よく関数型プログラミングとか手続き型とかがでてくるが、全然理解してなかったので整理した
+## 型について
+基本的なプリミティブ型はjsと全く同じ7種類
 
-
-# 関数型プログラミング
-入力、出力が同じ出力が保証されている参照透過な関数を組み合わせるスタイルのこと
-
-## Arrayのプロトタイプメソッドを整理
+## interfaceでの型定義
 
 ```
-map() ・・・要素をひとつずつ加工して配列を返す
-posts.map((val) => {console.log(val)});
+interface User {
+    id: number;
+    name: string;
+    //?でreadonly
+    alias?: string;
+}
 
-find() ・・・条件にあった最初の要素を返す。ない場合はundefind
-const found = posts.find((val) => {return val.id == target_id});
+const user1: User = {id: 1, name: 'ss'};
 ```
 
-filter() ・・・・・・条件あったもののみを配列を返す
-findIndex() ・・・条件に合った最初のインデックスを返す。-1を返すない場合
-every()　・・・すべて条件にあうか真偽値で返す
-some() ・・・ひとつでも満たすか真偽値で返す
-const exist = posts.some((val) => val.id === 20);
-
-reduce() ・・・第二引数に要素が入り、第一引数には前回処理された結果が入ってくる。最後に実行されたものを返す
-includes() ・・・指定した値がひとつでも含まれるかを真偽値
-
-## オブジェクトについて
-forは使わない方がいいらしい
-
+## インデックスシグネチャ
 ```
-const article = {
-    id: 10,
-    title: 'タイトル',
-    content: '本文',
-};
-
-Object.keys(article);
-[ 'id', 'title', 'content' ]
-
-Object.values(article);
-[ 1, 'タイトル', '本文' ]
-
-Object.entries(article);
-[ [ 'id', 1 ], [ 'title', 'タイトル' ], [ 'content', '本文' ] ]
+//キーも縛ることができる、これがインデックスシグネチャ
+interface Status {
+    [param: string] = number;
+}
 ```
 
-反復処理はこれで行えばできるぽい
+## リテラル型
+
+# 関数の定義
 
 ```
-Object.entries(posts).map(([k,v]) => {console.log(k, v)});
-id 1
-title 'タイトル'
-content '本文'
+const add = (n: number, m:number): number => n + m;
+
+//何も返さない場合はvoid
+const hello = (): void => {
+    console.log('hello');
+}
+console.log(add(1,1));
+hello();
 ```
 
-### 高階関数
-引数に関数を取ったり、戻り値として関数を返す関数のこと
-map()とかfilter()も高階関数
+```
+//引数と戻り値の方を別々に定義できる
+interface Op{
+    (n:number, m:number): number;
+}
 
+const add: Op = (n,m) => n+m;
+```
 
-### カリー化
-複数の引数を引き取る関数をより少なくできる仕組み
+## ジェネリクス定義
 
+```
+function toArray<T>(arg1: T, arg2: T) {
+    return [arg1, arg2];
+}
+
+toArray<number>(11,111);
+``` 
+
+## クラス定義
+
+```
+interface Post{
+    id: number;
+    title: string;
+}
+``` 

@@ -18,10 +18,10 @@ const Header = () => {
             <a className="main-nav-link">AWS</a>
           </Link>
           <Link href={{ pathname: "/posts/linux_centos" }}>
-            <a className="main-nav-link">LINUX</a>
+            <a className="main-nav-link">Linux</a>
           </Link>
           <Link href={{ pathname: "/posts/ts_electron" }}>
-            <a className="main-nav-link">typescript</a>
+            <a className="main-nav-link">ts/js</a>
           </Link>
           <Link href={{ pathname: "/posts/mysql" }}>
             <a className="main-nav-link">mysql</a>

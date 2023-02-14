@@ -1,7 +1,7 @@
 ---
 title: "asdfでNode.jsをインストールとViteで新規プロジェクト作成"
 published: 2023-01-16
-category: typescript
+category: ts/js
 ---
 
 ## インストールからパスを通すまで
