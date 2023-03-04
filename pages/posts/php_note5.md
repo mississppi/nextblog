@@ -49,3 +49,16 @@ zaddでスコアつけながらSETする
 3) "iuser"
 4) "hoge"
 ```
+
+ある程度insertしたかったのでbashで作成
+```
+#!/bin/bash
+
+i=1
+while [ $i -le 20 ]
+do
+    info=$(redis-7.0.9/src/redis-cli set ${i} value)
+    i=$(( $i + 1 )) # countup
+done
+```
+
