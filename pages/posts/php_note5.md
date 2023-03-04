@@ -1,5 +1,5 @@
 ---
-title: "ubuntuにredisをインストール"
+title: "redisで色々あそんでみた"
 published: 2023-03-02
 category: php
 ---
