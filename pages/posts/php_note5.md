@@ -1,5 +1,5 @@
 ---
-title: "redisで色々あそんでみた"
+title: "redisの検証など"
 published: 2023-03-02
 category: php
 ---
