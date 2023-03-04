@@ -4,7 +4,7 @@ published: 2023-03-02
 category: php
 ---
 
-とりあえず環境構築
+## とりあえず環境構築
 
 ```
 sudo add-apt-repository ppa:redislabs/redis
@@ -13,7 +13,7 @@ sudo apt-get install redis
 redis-cli -v
 ```
 
-コマンド集
+## コマンド集
 ```
 //確認
 info
@@ -30,7 +30,7 @@ del 2
 
 ```
 
-zaddでスコアつけながらSETする
+## zaddでスコアつけながらSETする
 
 ```
 127.0.0.1:6379> zadd ranking 1 'user1'
@@ -50,7 +50,13 @@ zaddでスコアつけながらSETする
 4) "hoge"
 ```
 
-ある程度insertしたかったのでbashで作成
+## 特定のkeyだけのvalueを計算
+```
+redis-cli keys *key* | wc -c
+
+```
+
+## ある程度insertしたかったのでbashで作成
 ```
 #!/bin/bash
 
