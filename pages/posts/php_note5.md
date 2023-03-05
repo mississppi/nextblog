@@ -53,7 +53,16 @@ del 2
 ## 特定のkeyだけのvalueを計算
 ```
 redis-cli keys *key* | wc -c
+```
 
+## grep込みでinfo情報を取得
+```
+src/redis-cli info | grep human
+```
+
+## 検索で削除
+```
+redis-cli KEYS "key*" | xargs redis-cli del
 ```
 
 ## ある程度insertしたかったのでbashで作成
